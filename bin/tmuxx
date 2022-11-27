@@ -1,0 +1,8 @@
+#!/bin/sh
+tmux new-session -d
+tmux send-keys "cd $(pwd)" C-m
+tmux split-window -v -p 10
+tmux send-keys "cd $(pwd)" C-m
+
+tmux select-pane -t 0
+tmux -2 attach-session
